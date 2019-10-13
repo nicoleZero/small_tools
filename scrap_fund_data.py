@@ -61,7 +61,7 @@ def get_fund_data(url,file_name):
                 
                 
         ft = pd.DataFrame(datas_dict)
-        ft.to_excel('my.xlsx',index=0)
+        ft.to_excel('my.xls',index=0)
         dt = pd.DataFrame(fund_data_item_dict)
         dt.to_excel(file_name,index=0)
         return dt  #返回表格内容
@@ -93,6 +93,6 @@ time = datetime.now()
 hms = time.strftime('%Y%m%d%S%f')
 endtime = time.strftime('%Y-%m-%d')
 data_config = get_data_config(endtime,endtime)
-t = get_fund_data(data_config,hms+'.xlsx')
+t = get_fund_data(data_config,hms+'.xls')
 print(t)
 figure = plot_figure(t)
